@@ -9,7 +9,7 @@ class CreatePyrPlaidPhoneNumbers < ActiveRecord::Migration[6.0]
       t.string :data, null: false, limit: 32
 
       t.boolean :primary, null: false, default: false
-      t.string :phone_type, null: false, limit: 32
+      t.string :type, null: false, limit: 64
     end
 
     add_index :pyr_plaid_phone_numbers, [:identity_id, :data]

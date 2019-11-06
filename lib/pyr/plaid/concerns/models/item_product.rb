@@ -1,6 +1,6 @@
 module Pyr
   module Plaid::Concerns::Model
-    module Item
+    module ItemProduct
       extend ActiveSupport::Concern
 
       included do

@@ -9,7 +9,7 @@ class CreatePyrPlaidEmails < ActiveRecord::Migration[6.0]
       t.string :email, null: false
 
       t.boolean :primary, null: false, default: false
-      t.string :phone_type, null: false, limit: 32
+      t.string :type, null: false, limit: 64
     end
 
     add_index :pyr_plaid_emails, [:identity_id, :email]
