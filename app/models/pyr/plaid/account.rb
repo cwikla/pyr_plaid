@@ -1,7 +1,7 @@
 module Pyr
   module Plaid
     class Account < ApplicationRecord
-      include Pyr::Plaid::Concerns::Models::Acount
+      include Pyr::Plaid::Concerns::Model::Account
     end
   end
 end

@@ -1,15 +1,15 @@
-module Pyr
-  module Plaid::Concerns::Model
-    module Account
-      extend ActiveSupport::Concern
+module Pyr::Plaid::Concerns::Model
+  module Account
+    extend ActiveSupport::Concern
 
-      included do
-        self.table_name = "pyr_plaid_accounts"
-      end
+    included do
+      belongs_to :user
 
-      module ClassMethods
-      end
+      has_many :balances #, class_name: "Pyr::Plaid::Balance"
+      has_many :owners #, class_name: "Pyr::Plaid::Identity"
+    end
 
+    module ClassMethods
     end
   end
 end

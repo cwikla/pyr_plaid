@@ -1,4 +1,4 @@
-class CreatePyrPlaidProducts < ActiveRecord::Migration[6.0]
+class CreateProducts < ActiveRecord::Migration[6.0]
   def change
     create_table :pyr_plaid_products do |t|
       t.timestamps

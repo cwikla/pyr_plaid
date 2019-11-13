@@ -1,4 +1,4 @@
-class CreatePyrPlaidBalances < ActiveRecord::Migration[6.0]
+class CreateBalances < ActiveRecord::Migration[6.0]
   def change
     create_table :pyr_plaid_balances do |t|
       t.timestamps
@@ -10,13 +10,8 @@ class CreatePyrPlaidBalances < ActiveRecord::Migration[6.0]
       t.decimal :current, precision: 14, scale: 4
 
       t.string :iso_currency_code, limit: 3
-      t.string :mask
-      t.string :name
-      t.string :official_name
-      t.string :sub_type
-      t.string :balance_type
     end
 
-    add_index :pyr_plaid_balances, [:account_id]
+    add_index :pyr_plaid_balances, [:account_id], name: :pyr_plaid_bal
   end
 end

@@ -1,8 +1,8 @@
 module Pyr
   module Plaid
-    module Identity
+    class Identity
       class PhoneNumber < ApplicationRecord
-        include Pyr::Plaid::Concerns::Models::Identity::PhoneNumber
+        include Pyr::Plaid::Concerns::Model::Identity::PhoneNumber
       end
     end
   end

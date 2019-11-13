@@ -1,6 +1,6 @@
-class CreatePyrPlaidAddresses < ActiveRecord::Migration[6.0]
+class CreateIdentityAddresses < ActiveRecord::Migration[6.0]
   def change
-    create_table :pyr_plaid_addresses do |t|
+    create_table :pyr_plaid_identity_addresses do |t|
       t.timestamps
       t.timestamp :deleted_at
 
@@ -15,7 +15,7 @@ class CreatePyrPlaidAddresses < ActiveRecord::Migration[6.0]
       t.boolean :primary, null: false, default: false
     end
 
-    add_index :pyr_plaid_addresses, [:identity_id, :city, :region]
-    add_index :pyr_plaid_addresses, [:postal_code]
+    add_index :pyr_plaid_identity_addresses, [:identity_id, :city, :region], name: :pyr_plaid_id_add_icr
+    add_index :pyr_plaid_identity_addresses, [:postal_code], name: :pyr_plaid_id_add_p
   end
 end

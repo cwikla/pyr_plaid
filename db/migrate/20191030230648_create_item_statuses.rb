@@ -1,4 +1,4 @@
-class CreatePyrPlaidItemStatuses < ActiveRecord::Migration[6.0]
+class CreateItemStatuses < ActiveRecord::Migration[6.0]
   def change
     create_table :pyr_plaid_item_statuses do |t|
       t.timestamps
@@ -7,6 +7,6 @@ class CreatePyrPlaidItemStatuses < ActiveRecord::Migration[6.0]
       t.integer :item_id, null: false
     end
 
-    add_index :pyr_plaid_item_statuses, [:item_id]
+    add_index :pyr_plaid_item_statuses, [:item_id, :created_at], name: :pyr_plaid_item_st_ic
   end
 end

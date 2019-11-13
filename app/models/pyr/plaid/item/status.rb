@@ -1,8 +1,8 @@
 module Pyr
   module Plaid
-    module Item
+    class Item
       class Status < ApplicationRecord
-        include Pyr::Plaid::Concerns::Models::Item::Satus
+        include Pyr::Plaid::Concerns::Model::Item::Status
       end
     end
   end

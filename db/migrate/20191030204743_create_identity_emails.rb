@@ -1,6 +1,6 @@
-class CreatePyrPlaidEmails < ActiveRecord::Migration[6.0]
+class CreateIdentityEmails < ActiveRecord::Migration[6.0]
   def change
-    create_table :pyr_plaid_emails do |t|
+    create_table :pyr_plaid_identity_emails do |t|
       t.timestamps
       t.timestamp :deleted_at
 
@@ -12,6 +12,6 @@ class CreatePyrPlaidEmails < ActiveRecord::Migration[6.0]
       t.string :type, null: false, limit: 64
     end
 
-    add_index :pyr_plaid_emails, [:identity_id, :email]
+    add_index :pyr_plaid_identity_emails, [:identity_id, :email], name: :pyr_plaid_id_em
   end
 end
